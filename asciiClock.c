@@ -3,20 +3,6 @@
 #include <time.h>
 #include <unistd.h>
 
-
-char* timeToString(hr,min,sec){
-    char *str = malloc(8);
-    str[0] = (hr/10)+'0';
-    str[1] = hr%10 +'0';
-    str[2] = ':';
-    str[3] = (min/10)+'0';
-    str[4] = min%10 +'0';
-    str[5] = ':'; 
-    str[6] = (sec/10)+'0';
-    str[7] = sec%10 +'0';
-    return str;
-}
-
 char one[5][5] = {
             {' ', ' ', '/', ' ',' '},
             {' ', '/', '|', ' ',' '},
@@ -84,6 +70,19 @@ char coll[5][5] = {
             {' ', ' ', '*', ' ',' '},
             {' ', ' ', '*', ' ',' '}};
 
+char* timeToString(hr,min,sec){
+    char *str = malloc(8);
+    str[0] = (hr/10)+'0';
+    str[1] = hr%10 +'0';
+    str[2] = ':';
+    str[3] = (min/10)+'0';
+    str[4] = min%10 +'0';
+    str[5] = ':'; 
+    str[6] = (sec/10)+'0';
+    str[7] = sec%10 +'0';
+    return str;
+}
+
 void stringToAscii(char str[8], char out[5][41]){
     for(int row = 0; row < 5; row += 1){
         for(int col = 0; col < 40; col += 1){
@@ -125,40 +124,6 @@ void stringToAscii(char str[8], char out[5][41]){
         }
     }
 }
-/*
-case '1':
-                printf(one[row][col%5]);
-                break;
-            case '2':
-                printf(two[row][col%5]);
-                break;
-            case '3':
-                printf(three[row][col%5]);
-                break;
-            case '4':
-                printf(four[row][col%5]);
-                break;
-            case '5':
-                printf(five[row][col%5]);
-                break;
-            case '6':
-                printf(six[row][col%5]);
-                break;
-            case '7':
-                printf(seven[row][col%5]);
-                break;
-            case '8':
-                printf(eight[row][col%5]);
-                break;
-            case '9':
-                printf(nine[row][col%5]);
-                break;
-            case '0':
-                printf(zero[row][col%5]);
-                break;
-            default:
-                printf
-*/
 
 int main(int argc, char *argv[]) {
     int hr = 0;
